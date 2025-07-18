@@ -16,7 +16,7 @@ const Index = () => {
   const services = [
     {
       icon: TrendingUp,
-      title: "Custom Indicators",
+      title: "MT4/MT5 Custom Indicators",
       description: "Advanced technical indicators tailored to your trading strategy - RSI variations, Moving averages, Volume indicators, and more.",
       features: ["Custom calculations", "Visual alerts", "Multi-timeframe", "Optimized performance"]
     },
@@ -28,14 +28,26 @@ const Index = () => {
     },
     {
       icon: Code,
-      title: "Script Development",
-      description: "Utility scripts for trade management, account analysis, and workflow automation.",
-      features: ["Trade utilities", "Account tools", "Data analysis", "Custom functions"]
+      title: "TradingView Pine Script",
+      description: "Custom Pine Script indicators and strategies for TradingView platform with advanced plotting and alerts.",
+      features: ["Pine Script indicators", "Strategy development", "Custom alerts", "Multi-timeframe analysis"]
     },
     {
       icon: Zap,
+      title: "NinjaTrader NT8",
+      description: "Professional NinjaScript development for NinjaTrader 8 including indicators, strategies, and tools.",
+      features: ["NinjaScript indicators", "Automated strategies", "Market analyzer", "Drawing tools"]
+    },
+    {
+      icon: TrendingUp,
+      title: "Thinkorswim Studies",
+      description: "Custom thinkScript studies and strategies for TD Ameritrade's Thinkorswim platform.",
+      features: ["thinkScript studies", "Custom scans", "Conditional orders", "Advanced charting"]
+    },
+    {
+      icon: Code,
       title: "Modification Services",
-      description: "Enhance existing indicators or EAs with new features, improved performance, or bug fixes.",
+      description: "Enhance existing indicators or EAs across all platforms with new features and improved performance.",
       features: ["Feature additions", "Performance optimization", "Bug fixes", "Code cleanup"]
     }
   ];
