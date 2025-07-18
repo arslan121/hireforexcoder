@@ -1,5 +1,6 @@
+
 import { Button } from "@/components/ui/button";
-import { BarChart3, Menu } from "lucide-react";
+import { Code, Menu } from "lucide-react";
 
 export const Navigation = () => {
   return (
@@ -7,21 +8,22 @@ export const Navigation = () => {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="p-2 rounded-lg bg-primary/10">
-            <BarChart3 className="h-6 w-6 text-primary" />
+            <Code className="h-6 w-6 text-primary" />
           </div>
-          <span className="font-bold text-xl text-foreground">ForexBot Pro</span>
+          <span className="font-bold text-xl text-foreground">MT4/MT5 Developer</span>
         </div>
 
         <div className="hidden md:flex items-center gap-6">
-          <a href="#dashboard" className="text-foreground hover:text-primary transition-colors">Dashboard</a>
-          <a href="#indicators" className="text-foreground hover:text-primary transition-colors">Indicators</a>
-          <a href="#strategies" className="text-foreground hover:text-primary transition-colors">Strategies</a>
+          <a href="#services" className="text-foreground hover:text-primary transition-colors">Services</a>
+          <a href="#portfolio" className="text-foreground hover:text-primary transition-colors">Portfolio</a>
+          <a href="#process" className="text-foreground hover:text-primary transition-colors">Process</a>
           <a href="#pricing" className="text-foreground hover:text-primary transition-colors">Pricing</a>
+          <a href="#about" className="text-foreground hover:text-primary transition-colors">About</a>
         </div>
 
         <div className="flex items-center gap-4">
-          <Button variant="ghost" className="hidden md:flex">Sign In</Button>
-          <Button variant="trading">Start Trading</Button>
+          <Button variant="ghost" className="hidden md:flex">Contact</Button>
+          <Button variant="trading">Start Project</Button>
           <Button variant="ghost" size="icon" className="md:hidden">
             <Menu size={20} />
           </Button>
