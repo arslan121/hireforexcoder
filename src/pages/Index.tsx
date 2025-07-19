@@ -178,21 +178,21 @@ const Index = () => {
         <div className="relative z-10 container mx-auto px-4 py-24">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-5xl lg:text-6xl font-bold text-foreground mb-6">
+              <h1 className="text-5xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-in">
                 Custom
-                <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent"> MT4/MT5</span>
+                <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent animate-pulse"> MT4/MT5</span>
                 <br />Development
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
                 Professional MQL4/MQL5 developer specializing in custom indicators, Expert Advisors, 
                 and trading scripts. Turn your trading ideas into reality with clean, optimized code.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" variant="trading" className="text-lg px-8">
+              <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{animationDelay: "300ms"}}>
+                <Button size="lg" variant="trading" className="text-lg px-8 transition-all duration-300 hover:scale-105 hover:shadow-lg group">
                   Get Custom Indicator
-                  <ArrowRight className="ml-2" size={20} />
+                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={20} />
                 </Button>
-                <Button size="lg" variant="outline">
+                <Button size="lg" variant="outline" className="transition-all duration-300 hover:scale-105">
                   View Portfolio
                 </Button>
               </div>
