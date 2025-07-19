@@ -11,7 +11,7 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <ThemeProvider defaultTheme="light" storageKey="hire-forex-coder-theme">
+    <ThemeProvider defaultTheme="dark" storageKey="hire-forex-coder-theme">
       <TooltipProvider>
         <Toaster />
         <Sonner />

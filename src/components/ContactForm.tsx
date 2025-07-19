@@ -1,63 +1,46 @@
-
-import { useState } from "react";
+import { useRef } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 export const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    projectType: "",
-    budget: "",
-    timeline: "",
-    description: ""
-  });
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
-  };
-
-  const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    if (formRef.current) {
+      formRef.current.submit(); // trigger hidden form submission
+    }
   };
 
   return (
     <Card className="p-8 border-border">
       <form onSubmit={handleSubmit} className="space-y-6">
+        {/* VISIBLE FORM */}
         <div className="grid md:grid-cols-2 gap-6">
           <div>
             <Label htmlFor="name">Name *</Label>
-            <Input
-              id="name"
-              value={formData.name}
-              onChange={(e) => handleInputChange("name", e.target.value)}
-              placeholder="Your full name"
-              required
-            />
+            <Input name="name" id="name" placeholder="Your full name" required />
           </div>
           <div>
             <Label htmlFor="email">Email *</Label>
-            <Input
-              id="email"
-              type="email"
-              value={formData.email}
-              onChange={(e) => handleInputChange("email", e.target.value)}
-              placeholder="your@email.com"
-              required
-            />
+            <Input name="email" id="email" type="email" placeholder="your@email.com" required />
           </div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
           <div>
             <Label htmlFor="projectType">Project Type *</Label>
-            <Select onValueChange={(value) => handleInputChange("projectType", value)}>
+            <Select name="projectType" required>
               <SelectTrigger>
                 <SelectValue placeholder="Select project type" />
               </SelectTrigger>
@@ -72,7 +55,7 @@ export const ContactForm = () => {
           </div>
           <div>
             <Label htmlFor="budget">Budget Range</Label>
-            <Select onValueChange={(value) => handleInputChange("budget", value)}>
+            <Select name="budget">
               <SelectTrigger>
                 <SelectValue placeholder="Select budget" />
               </SelectTrigger>
@@ -86,7 +69,7 @@ export const ContactForm = () => {
           </div>
           <div>
             <Label htmlFor="timeline">Timeline</Label>
-            <Select onValueChange={(value) => handleInputChange("timeline", value)}>
+            <Select name="timeline">
               <SelectTrigger>
                 <SelectValue placeholder="When needed?" />
               </SelectTrigger>
@@ -104,9 +87,8 @@ export const ContactForm = () => {
         <div>
           <Label htmlFor="description">Project Description *</Label>
           <Textarea
+            name="description"
             id="description"
-            value={formData.description}
-            onChange={(e) => handleInputChange("description", e.target.value)}
             placeholder="Please describe your project requirements in detail..."
             rows={6}
             required
@@ -118,6 +100,19 @@ export const ContactForm = () => {
             Send Project Request
           </Button>
         </div>
+      </form>
+
+      {/* HIDDEN HTML FORM FOR FORMSUBMIT */}
+      <form
+        ref={formRef}
+        action="https://formsubmit.co/fxcoder0909@gmail.com"
+        method="POST"
+        className="hidden"
+      >
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="http://192.168.100.5:8080/" />
+
+        {/* Matching fields that get filled by JS (optional if you want JS sync) */}
       </form>
     </Card>
   );
