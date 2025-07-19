@@ -13,7 +13,10 @@ export const Navigation = () => {
             <img 
               src={logo} 
               alt="Hire Forex Coder Logo" 
-              className="h-10 w-10 object-contain"
+              className="h-10 w-10 object-contain brightness-0 saturate-100"
+              style={{ 
+                filter: 'brightness(0) saturate(100%) invert(47%) sepia(100%) saturate(1500%) hue-rotate(180deg) brightness(1.1) contrast(101%)'
+              }}
             />
           </div>
           <span className="font-bold text-xl text-foreground transition-colors duration-300 group-hover:text-primary">
