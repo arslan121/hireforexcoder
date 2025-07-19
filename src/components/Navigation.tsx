@@ -10,14 +10,9 @@ export const Navigation = () => {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center gap-3 group">
           <div className="relative overflow-hidden rounded-lg transition-transform duration-300 group-hover:scale-110">
-            <img 
-              src={logo} 
-              alt="Hire Forex Coder Logo" 
-              className="h-10 w-10 object-contain brightness-0 saturate-100"
-              style={{ 
-                filter: 'brightness(0) saturate(100%) invert(47%) sepia(100%) saturate(1500%) hue-rotate(180deg) brightness(1.1) contrast(101%)'
-              }}
-            />
+            <div className="h-10 w-10 bg-primary rounded-lg flex items-center justify-center text-primary-foreground font-bold text-lg">
+              FC
+            </div>
           </div>
           <span className="font-bold text-xl text-foreground transition-colors duration-300 group-hover:text-primary">
             Hire Forex Coder
